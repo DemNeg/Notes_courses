@@ -1,0 +1,467 @@
+INTRODUCTION
+------------
+What's Angular
+=============
+frontend fmk
+open source project sponsord by google
+build entirel on typescript
+
+Features
+========
+Exceptionnel scalling
+cross plateform
+SPA
+Typescript
+Declarative template
+Dependency injection
+End to End tooling
+Modular
+Smart build
+
+
+
+COMPLETE VERSION
+-----------------------
+
+Angular 1.X ===> ANGULAR js
+		Base in MVC model
+		not support mobile dev
+
+Angular 2 ==> Complete rewrite of angular ANG js
+	      writing in typescript
+	      Mobile oriented
+	      provides mores choices for languages ==> ES5,ES6,Typescript or Dart
+Angular 3 was skipped ==> mismatch between libraries
+
+Angular 4 ==> 2017
+Angular 5 ==> Novembre2017  ==> build optimiser was introduced, 
+	Angular http deprecated and introduces HttpClient introduced
+	HttpModules deprecated, introduces HttpClientModule
+
+Angular 6 ==> Release on May 2018
+		With ng update and ng add
+		Dev kit (CDK)
+		Angular Material Starter Components
+		CLI Workspaces
+		Schematics
+		Library support
+		Tree Shakable Providers
+		Animation Performance Improvements
+		RxJS
+Angular 7 ==> Release on October 2018
+		Angular CLI 7 also
+		Angular Material 7 also
+New Features like ==>  Virtual Scrolling
+		       Drag and Drop
+		       Content Projection Support in Angular elements
+		       Dependency Updates
+
+Angular 8 ==> Release on Mai 2019
+		Defferential loading by default ==> Automatically choose browser
+		Dynamic import for route configs.
+		Builder API is in CLI ==> We can customise angular CLI commands like ==> ng build, ng test, and ng run
+		Workspace APIs in the CLI
+		Web worker SUpport
+		Angular 3.8.0 ==> added new UX for initial app created using ng new.
+		ng deploy is added in Angular CLI 8.3.0
+
+Angular 9 ==> Release on Feb 2020
+		Ivy compiler ==> better performance
+		Angular Material New component ==>
+						Youtube player component
+						Google Map component
+Angular 10 ==> Release on Juin 2020
+
+		Angular Material New component
+		Date Range  Picker
+	
+Angular 11 ==> 	Nov 2020
+		Faster Builds. 
+		Angular ESLint Updates. 
+		Internet Explorer Updates. 
+		Webpack 5 Support.
+		Improved Logging and Reporting.
+		Updated Language Service Preview.
+		Updated Hot Module Replacement (HMR) Support.
+		Automatic Font Inlining.
+Angular 12 ==> 	Mai 2021
+		Ivy Everywhere
+		Migrating from legacy i18n message IDs
+		Protractor: planning for future
+		Improvements in styling
+		Deprecating support for IE11
+		Support from the Community
+		Typescript 4.2
+		Angular Universal
+		Webpack 5.37 support
+		Nullish Coalescing
+		New Dev Tools
+		ng API improvements
+		
+Angular 13 ==> 	Nov 2021
+		Support for TypeScript 4.4 ( no longer support version 4.2 and 4.3)
+		Enhancements to Angular Tests
+		100% Ivy and No More Support for View Engine ==> Now that there is no View Engine-specific metadata or older output formats
+		Ergonomic APIs
+		Angular CLI Enhancements
+		Changes to the Angular Package Format(APF)
+		Changes in Framework and Dependency Updates
+		Component API Updates
+		No Longer Support for Internet Explorer 11
+		Accessibility Update in Angular Material
+		New Type of Forms
+		Inline Support for Adobe Fonts
+		Improvements in Localization
+
+UPGRAGE ANGULAR:
+---------------
+
+It recommended to moove in a systematic way from one version to another but not jumping directly
+Ex: 8 to 9, 9 to 10 and 10 to 11
+   But not 8 to 11 directly
+All the stpes are available in upgrade.angular.io
+
+
+INSTALL ANGULAR CLI:
+-------------------
+Prerequisites:
+	OS : Windows/Mac/Linux
+	NodeJs : open Source, X platform javaScript runtime env.
+	NPM : Node Package Manager for js programming language( install by default with node.js)
+
+
+
+Karma : Test script runner ==> run or execute all test script
+tsconfig ==> build output directory
+	     Source map
+
+
+Angular booting process
+-----------------------
+ng serve ==> to start angular app (same process for ng serve/build/test ...)
+	- it first compills the app ( transpile typescript into javascript)
+	- main.ts ==> all start from this file
+				- bootstrap module
+					-AppModule
+						Appcomponent
+					- AuthModule
+						- Login
+						- CheckAuth
+						- Forgot
+						- NewUser
+						- LoggedIn
+	
+	- test.ts
+		- test script for main.ts
+	
+	index.html
+		AppModule
+			AppComponent
+				<app-root>
+
+
+package.json ==> define the schematics and script that are use to are to the build pipeline
+------------
+	  ==> also contents some dependences and modules that are required for the app
+
+	- name of app
+	- version of app
+	
+	-scripts
+		-> "npm run start"
+			-> ng serve
+				-> angular.json
+		-> can we add more scripts to package.json? ==> YES YES YES YES
+		 
+		-> scripts are your starting point of learning
+			- when working on existing project ( to know to perfom test, run app, build app)
+	
+	dependencies
+		-> All the modules/librairies you MUST have to run in prod env.
+		-> the prod code will mostly be optimized/minimum
+	devDependencies
+		-> All the modules/librairies you MUST have to develop your app.
+		-> We may add packages/modules but we may not use them
+
+package-lock.json ==> content details about dependencies and devDependencies defined on package.json
+		==> contents also their dependencies
+
+Episode 10
+**********
+
+ANGULAR CLI : Angular Command Line interface
+-------------
+	it provide ==> Schematics --> command configured to do a certain things
+			ng serve
+			ng build
+			ng test
+			ng lint
+			ng e2e
+		   ==> Commands
+		    	ng new <app_name>
+			ng generate component <component_name>
+			ng generate module <module_name>
+			ng generate pipe<pipe_name>
+			ng generate directive <directive_name>
+	angular.json
+		demo
+		   - ng serve -> will compile the app and make it running
+		   - ng test -> test and run our unit test scripts
+		   - ng e2e -> test and run allour end to end tests	
+		   - ng lint -> verify the coding style standard de defined in tslint file
+		   - ng build -> build your app and make it ready for prod. env. deployement
+		   	--> will generate builds of the app and put them on the folderr called "dist" --> whitch will be deploy in the prod. env
+
+
+
+
+Episode 11
+**********
+
+ANGULAR APP ARCHITECTURE - BLUE PRINT
+------------------------
+
+
+Modular Based Architecture
+==========================
+Components mapped inside modules
+=================================
+Common libs for shared components
+=================================
+Multiple Apps inside the repo
+=============================
+
+
+CRM Application
+      src
+	   contacts -> Module
+		add-contact -> component inside module
+		edit-contact -> component inside module
+		delete-contact -> component inside module
+		view-contact -> component inside module
+	   users -> Module
+		add-user-> component inside module
+		edit-user-> component inside module
+		delete-user-> component inside module
+		view-user-> component inside module
+	   orders -> Module
+	   leads  -> Module
+	   reports -> Module
+	   settings -> Module
+           profile -> Module
+	   shared -> Module
+		auth
+		tokens
+
+	  
+	Services -> HTT/Reusable code
+	    contact-service.ts
+	    user-service.ts 
+	assets
+	    images
+            mock-data
+	pipes
+	    highlight-pipe
+
+Episode 12
+**********
+ANGULAR MODULES  ==> Modular Based Architecture
+---------------
+
+	- There are lot of modules which are built-in
+	-Examples of built-in Modules
+		- BrowserModule,
+    		- AppRoutingModule,
+    		- BrowserAnimationsModule,
+
+	-Angular Material Library
+		- MatButtonModule
+		- MatDropDownModule
+
+# All the code and functionnality is grouped in a module
+# Whenevery you see a @ symbol - it's a decorator ( whitch tells what it is)
+# What modules consist
+	- declarations
+		- this is where we will add all the components of the module
+	- imports
+		- we can import modules inside a module
+	- providers
+		- services that we need will be injected here
+	- Bootstrap
+		- What is the first component the module should load
+	- exports
+		- is to export and expose the component outside the module
+# Every Angular should have atleast 1 module
+# By default, Angular framework provides us with AppModule	
+# The AppModule will have a component by the name
+	- AppComponent
+# Whenever we are building Angular applications
+	- we will always think of modules first
+Ex.
+   Contacts
+   Users
+   Leads
+   Opportunites
+   Settings
+   Profile
+   Auth
+
+Free User
+   Contacts
+   Users
+	
+Premium User
+   Contacts
+   Users
+   Leads
+   Opportunites
+
+Entreprise User
+   Contacts
+   Users
+   Leads
+   Opportunites
+   Settings
+   Profile
+   Auth
+
+# You can turn on or off modules based on conditions
+# Modules -> Grouping
+	- components
+	- services
+	- pipes
+	- directives
+
+# Create custom modules
+commands ==>
+	     ng generate module contact
+	     ng generate module leads
+	     ng generate module profile
+	     ng generate module settings
+	     ng generate module authentication
+
+
+Episode 13 :
+***********
+ANGULAR COMPONENTS 
+------------------
+
+1. components are the most important and basic bulding blocks of angular apps
+2. Authentication Module
+   - new-user
+   - login
+   - forgot-password
+   - reset-password
+3. component is a smallest functionality that you will implement in your applications
+4. When we group multiple components together ==> it will become a module
+5. we can have parent-child relationship of components  ==> we can component inside components
+	Dashbord
+	    - display-contact-list
+           	 - contact-grid
+            	 - contact-options
+	   	 - contact-download
+	    	 - contact-export
+
+6.Tree-hierachy of components
+
+7. Creation of custom components
+	ng g component add-user
+	ng g component edit-user
+	ng g component list-user
+	ng g component view-user
+	ng g component delete-user
+
+
+8. Every component has 4 files auto-generated to it
+	- component.html --> View or html or template file -> UI
+	- component.ts --> it will class file which have methods -> Logic
+	- component.spec.ts --> it will have the unit test script for component
+	- component.scss --> stylesheet of the component
+9. Component decorator inside the component.ts file
+	selector -> unique identifier for the component
+	    -> id of the component
+	    -> using this selector we will use the component
+	templateURL -> your HTML code
+	    -> component.html file
+	styleURL -> for linking your component stylesheet
+	    -> component.scss
+
+Episode 14
+***********
+COMPONENT LIFECYCLEv  ==> 8 Lifecycle Hooks
+-------------------
+
++ ngOnChanges()
++ ngOnInit()
++ ngOnDoCheck()
++ ngAfterContentInit()
++ ngAfterContentChecked()
++ ngAfterViewInit()
++ ngAfterViewChecked()
++ ngOnDestroy()
+
+
+ngOnChanges
+============
+
+# Used in on pretty any component that has an input
+# Called whenever an input value changes
+# Is called the first time before ngOnInit
+
+ngOnInit
+========
+# Used to initialize data in a component
+# Called after input values ares et when a component is initialized
+# Added to every component by default by angular CLI
+# Called only once
+
+ngOnDoCheck
+===========
+# Called during all change detection runs
+# A run through the view by angular to update/detect changes
+
+ngAfterContentInit
+==================
+# Called only once after first ngDoCheck()
+# Called after the first run through of initializing content
+
+ngAfterContentChecked
+=====================
+# Called after every ngDoCheck()
+# Waits till after ngAfterContentInit() on first run through
+
+ngAfterViewInit
+===============
+# Called after Angular initializes component and child component content
+# Called only once after view is initialized
+
+ngAfterViewChecked
+==================
+# Called after all the content is initialized and checked. (Component and child components).
+# First call is after ngAfterViewInit
+# Called after every ngAfterContentChecked() call is completed
+
+ngOnDestroy
+============
+# Used to clean up any necessary code when a component is removed from DOM.
+# Fairly often used to unsubscribe from things like services.
+# Called only once just before component is removed from the DOM
+
+
+
+Some of the most used ones are  ===> ngOnChanges()
+				     ngOnInit()
+				     ngAfterViewInit()
+				     ngOnDestroy()
+
+
+
+
+Token : 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
+
+
+
+
+
+
+	   
